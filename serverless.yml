@@ -1,0 +1,103 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: alice-runtime-template-100
+# app and org for use with dashboard.serverless.com
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  timeout: 30
+  memorySize: 1024 # 512
+  logRetentionInDays: 14 # Set the default RetentionInDays for a CloudWatch LogGroup
+  stage: ${opt:stage, 'local'}
+  region: eu-west-1
+  profile: default
+
+  # you can define service wide environment variables here
+  environment:
+    ALICE_RUNTIME_DRIVER: ${file(./alice-runtime-config.${self:provider.stage}.json):ALICE_RUNTIME.DRIVER}
+    ALICE_RUNTIME_MONGODB_URL: ${file(./alice-runtime-config.${self:provider.stage}.json):ALICE_RUNTIME.MONGODB.URL}
+    ALICE_RUNTIME_MONGODB_DB: ${file(./alice-runtime-config.${self:provider.stage}.json):ALICE_RUNTIME.MONGODB.DB}
+
+# -------------------------------------------------------------------------------------------------------------------------------
+package:
+  exclude:
+    - .idea/**
+    - _dev_helper/**
+    - exe/**
+    - test/**
+    - alice-runtime-config.*
+    - install_commands.js
+    - install_trigger.js
+
+# -------------------------------------------------------------------------------------------------------------------------------
+functions:
+  # -----------------------------------------------------------------------------------------------------------------------------
+  api_app:
+    handler: serverless/api/lmd.fn
+    timeout: 30
+    events:
+      - http:
+          path: v1/PIM/inventory
+          method: get
+          cors: true
+
+  # -----------------------------------------------------------------------------------------------------------------------------
+  sys_Index_DB:
+    handler: serverless/system/index-db/lmd.fn
+    timeout: 300
+    events:
+      - schedule:
+          rate: cron(33 4 * * ? *) # GMT
+          enabled: true
+
+  # -----------------------------------------------------------------------------------------------------------------------------
+  sys_Process:
+    handler: serverless/system/process/lmd.fn
+    timeout: 600
+    events:
+      - schedule:
+          rate: cron(* * * * ? *) # GMT
+          enabled: true
+
+  # -----------------------------------------------------------------------------------------------------------------------------
+  sys_Dashboard_Api:
+    handler: serverless/system/dashboard-api/lmd.fn
+    timeout: 30
+    events:
+      - http:
+          path: dashboard/{func}
+          method: get
+          cors: true
+          request:
+            parameters:
+              paths:
+                id: func
+      - http:
+          path: dashboard/{func}
+          method: post
+          cors: true
+          request:
+            parameters:
+              paths:
+                id: func
+
+
+# -------------------------------------------------------------------------------------------------------------------------------
+plugins:
+  - serverless-offline  # serverless-offline needs to be last in the list

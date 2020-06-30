@@ -1,0 +1,10 @@
+{
+  "ALICE_RUNTIME": {
+    "STAGE": "local",
+    "DRIVER": "mongodb",
+    "MONGODB": {
+      "URL": "mongodb://localhost",
+      "DB": "alice-runtime-template-100-local"
+    }
+  }
+}

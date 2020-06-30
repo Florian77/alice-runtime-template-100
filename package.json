@@ -1,0 +1,45 @@
+{
+  "name": "alice-runtime-template-100",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "set DEV_CONSOLE_FORCE_OFF=1 && set ALICE_RUNTIME_SHOW_DB_CONNECTION_MSG=0 && npx mocha --ui bdd ./app/**/*.test.js ./test/**/*.test.js",
+    "test-loud": "npx mocha --ui bdd ./app/**/*.test.js ./test/**/*.test.js",
+    "____TEST-CASE____": "echo TEST-CASE",
+    "Dashboard__tc": "npx alice-runtime dashboard-api --port 3010 --path-prefix /dashboard/ --stage test-case",
+    "____UNIT-TEST____": "echo UNIT-TEST",
+    "Dashboard__ut": "npx alice-runtime dashboard-api --port 3010 --path-prefix /dashboard/ --stage unit-test",
+    "____LOCAL____": "echo LOCAL",
+    "Dashboard": "npx alice-runtime dashboard-api --port 3010 --path-prefix /dashboard/ --stage local",
+    "Serverless_Offline": "npx serverless offline start -s local --port 3010",
+    "Install_Trigger": "node install_trigger --stage local",
+    "Install_Commands": "node install_commands.js --stage local",
+    "ReInit_DB": "npx alice-runtime clear-db --stage local && npx alice-runtime index-db --stage local && node install_trigger --stage local && node install_commands.js --stage local",
+    "____DEV____": "echo DEV",
+    "Dashboard_": "npx alice-runtime dashboard-api --port 3010 --path-prefix /dashboard/ --stage dev",
+    "Serverless_Offline_": "npx serverless offline start -s dev --port 3010",
+    "Deploy_": "npx serverless deploy -s dev",
+    "Install_Trigger_": "node install_trigger --stage dev",
+    "Install_Commands_": "node install_commands.js --stage dev",
+    "ReInit_DB_": "npx alice-runtime clear-db --stage dev && npx alice-runtime index-db --stage dev && node install_trigger --stage dev && node install_commands.js --stage dev",
+    "____PROD____": "echo PROD",
+    "Serverless_Offline__": "npx serverless offline start -s prod --port 3010",
+    "Deploy__": "npx serverless deploy -s prod",
+    "Install_Trigger__": "node install_trigger --stage prod",
+    "Install_Commands__": "node install_commands.js --stage prod",
+    "ReInit_DB__": "npx alice-runtime clear-db --stage dev && npx alice-runtime index-db --stage dev && node install_trigger --stage dev && node install_commands.js --stage dev"
+  },
+  "author": "Florian Tölle",
+  "dependencies": {
+    "alice-runtime": "^0.1.19",
+    "node-dev-console": "^1.x",
+    "ramda": "^0.27.0",
+    "solid-robot": "^0.0.1"
+  },
+  "devDependencies": {
+    "chai": "^4.x",
+    "mocha": "^8.x",
+    "serverless-offline": "^6.4.0",
+    "command-line-args": "^5.1.1"
+  }
+}

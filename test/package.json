@@ -1,0 +1,26 @@
+{
+  "name": "dev-helper",
+  "scripts": {
+    "____TEST-CASE____": "",
+    "Process_ALL_": "npx alice-runtime process --path ../app --stage test-case",
+    "Dashboard_API_SERVER_": "npx alice-runtime dashboard-api --port 3010 --path-prefix /dashboard/ --stage test-case",
+    "____LOCAL____": "echo LOCAL",
+    "Clear_DB": "npx alice-runtime clear-db --stage local",
+    "Index_DB": "npx alice-runtime index-db --stage local",
+    "Process_ALL": "npx alice-runtime process --path ../app --stage local",
+    "Process_ALL-2": "npx alice-runtime process --path ../app --stage local",
+    "Process_1_Command": "npx alice-runtime process-commands --max-commands 1 --path ../app --stage local",
+    "Process_all_Command": "npx alice-runtime process-commands --path ../app --stage local",
+    "Dispatch_1_Event": "npx alice-runtime dispatch-events --max-events 1 --max-runtime 60 --stage local",
+    "Dispatch_all_Events": "npx alice-runtime dispatch-events --stage local",
+    "Process_1_Trigger": "npx alice-runtime process-trigger --max-trigger 1 --max-trigger-events 1 --path ../app --stage local",
+    "Process_all_Trigger": "npx alice-runtime process-trigger --path ../app --stage local",
+    "Dashboard_API_SERVER": "npx alice-runtime dashboard-api --port 3010 --path-prefix /dashboard/ --stage local",
+    "DC_ON__Process_ALL": "set DEV_CONSOLE_ON=1&& npx alice-runtime process --path ../app --stage local",
+    "DC_ON__Process_1_Command": "set DEV_CONSOLE_ON=1&& npx alice-runtime process-commands --max-commands 1 --path ../app --stage local",
+    "DC_ON__Dispatch_1_Event": "set DEV_CONSOLE_ON=1&& npx alice-runtime dispatch-events --max-events 1 --max-runtime 60 --stage local",
+    "DC_ON__Process_1_Trigger": "set DEV_CONSOLE_ON=1&& npx alice-runtime process-trigger --max-trigger 1 --max-trigger-events 1 --path ../app --stage local",
+    "DC_ON__Dashboard_API_SERVER": "set DEV_CONSOLE_ON=1&& npx alice-runtime dashboard-api --port 3010 --path-prefix /dashboard/ --stage local",
+  },
+  "author": "Florian Tölle"
+}
