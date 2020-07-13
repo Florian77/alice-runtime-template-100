@@ -35,7 +35,7 @@
   },
   "author": "Florian Tölle",
   "dependencies": {
-    "alice-runtime": "^0.1.19",
+    "alice-runtime": "^0.2.0",
     "node-dev-console": "^1.x",
     "ramda": "^0.27.0",
     "solid-robot": "^0.0.1"
