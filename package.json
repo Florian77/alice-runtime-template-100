@@ -27,11 +27,11 @@
     "ReInit_DB_": "npx alice-runtime clear-db --stage dev && npx alice-runtime index-db --stage dev && node install_trigger --stage dev && node install_commands.js --stage dev",
     "____PROD____": "echo PROD",
     "Serverless_Offline__": "npx serverless offline start -s prod --httpPort 3020 --noPrependStageInUrl",
-    "Process__": "npx alice-runtime process --path ../app --stage dev",
+    "Process__": "npx alice-runtime process --path ../app --stage prod",
     "Deploy__": "npx serverless deploy -s prod",
     "Install_Trigger__": "node install_trigger --stage prod",
     "Install_Commands__": "node install_commands.js --stage prod",
-    "ReInit_DB__": "npx alice-runtime clear-db --stage dev && npx alice-runtime index-db --stage dev && node install_trigger --stage dev && node install_commands.js --stage dev"
+    "ReInit_DB__": "npx alice-runtime clear-db --stage prod && npx alice-runtime index-db --stage prod && node install_trigger --stage prod && node install_commands.js --stage prod"
   },
   "author": "Florian Tölle",
   "dependencies": {
