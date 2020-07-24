@@ -8,7 +8,7 @@
     "____TEST-CASE____": "echo TEST-CASE",
     "Dashboard__tc": "npx alice-runtime dashboard-api --port 3010 --path-prefix /dashboard/ --stage test-case",
     "Process__tc": "npx alice-runtime process --path ./app --stage test-case",
-    "Clear_DB_tc": "npx alice-runtime clear-db --stage test-case && npx alice-runtime index-db --stage test-case",
+    "Clear_DB__tc": "npx alice-runtime clear-db --stage test-case && npx alice-runtime index-db --stage test-case",
     "____UNIT-TEST____": "echo UNIT-TEST",
     "Dashboard__ut": "npx alice-runtime dashboard-api --port 3010 --path-prefix /dashboard/ --stage unit-test",
     "____LOCAL____": "echo LOCAL",
