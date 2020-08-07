@@ -5,6 +5,8 @@
     "MONGODB": {
       "URL": "mongodb://localhost",
       "DB": "alice-runtime-template-100-local"
-    }
+    },
+    "SHOW_DB_CONNECTION_MSG": true,
+    "ENCRYPTION_KEY": "--default--local-encryption-key--"
   }
 }

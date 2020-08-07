@@ -1,12 +1,12 @@
 {
   "ALICE_RUNTIME": {
-    "STAGE": "unit-test",
+    "STAGE": "dev",
     "DRIVER": "mongodb",
     "MONGODB": {
       "URL": "mongodb://localhost",
-      "DB": "alice-runtime-template-100-unit-test"
+      "DB": "alice-runtime-template-100-dev"
     },
     "SHOW_DB_CONNECTION_MSG": false,
-    "ENCRYPTION_KEY": "--default--test-encryption-key--"
+    "ENCRYPTION_KEY": "---add-256-bit-key-here---"
   }
 }

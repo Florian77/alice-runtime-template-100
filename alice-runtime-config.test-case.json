@@ -6,6 +6,7 @@
       "URL": "mongodb://localhost",
       "DB": "alice-runtime-template-100-test-case"
     },
-    "SHOW_DB_CONNECTION_MSG": true
+    "SHOW_DB_CONNECTION_MSG": true,
+    "ENCRYPTION_KEY": "--default--test-encryption-key--"
   }
 }
