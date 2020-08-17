@@ -36,15 +36,15 @@
   },
   "author": "Florian Tölle",
   "dependencies": {
-    "alice-runtime": "^0.2.0",
+    "alice-runtime": "^0.2.1",
     "node-dev-console": "^1.x",
-    "ramda": "^0.27.0",
+    "ramda": "^0.27.1",
     "solid-robot": "^0.0.1"
   },
   "devDependencies": {
     "chai": "^4.x",
-    "mocha": "^8.x",
-    "serverless-offline": "^6.4.0",
-    "command-line-args": "^5.1.1"
+    "command-line-args": "^5.1.1",
+    "mocha": "^8.1.1",
+    "serverless-offline": "^6.5.0"
   }
 }
