@@ -47,7 +47,9 @@ module.exports.fn = async (event, context) => {
         const apiBasePath = resolve(__dirname, "..", "..", "api");
         // dc.t(apiBasePath, "apiBasePath");
 
-        const {statusCode, body} = await frontendApi(alice, appBasePath, apiBasePath, event);
+        const {statusCode, body} = await frontendApi(alice, appBasePath, apiBasePath, event, {
+            logApiCall: true
+        });
         // dc.j(statusCode, "result statusCode");
         // dc.j(body, "result body");
 
