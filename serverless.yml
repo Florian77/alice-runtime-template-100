@@ -36,6 +36,7 @@ provider:
     ALICE_RUNTIME_SHOW_DB_CONNECTION_MSG: ${file(./alice-runtime-config.${self:provider.stage}.json):ALICE_RUNTIME.SHOW_DB_CONNECTION_MSG}
     ALICE_RUNTIME_ENCRYPTION_KEY: ${file(./alice-runtime-config.${self:provider.stage}.json):ALICE_RUNTIME.ENCRYPTION_KEY}
     ALICE_RUNTIME_APP_VERSION: ${file(./package.json):version}
+    ALICE_RUNTIME_APP_NAME: ${file(./package.json):name}
     ALICE_RUNTIME_STAGE: ${self:provider.stage}
 
 # -------------------------------------------------------------------------------------------------------------------------------
