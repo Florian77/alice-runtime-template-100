@@ -14,6 +14,7 @@
     "____LOCAL____": "echo LOCAL",
     "Dashboard": "npx alice-runtime dashboard-api --port 3010 --path-prefix /dashboard/ --stage local",
     "Process": "npx alice-runtime process --path ./app --stage local",
+    "Process_Loop": "npx alice-runtime process --loop --interval 1 --path ./app --stage local",
     "Serverless_Offline": "npx serverless offline start -s local --httpPort 3020 --noPrependStageInUrl",
     "Install_Trigger": "node install_trigger --stage local",
     "Install_Commands": "node install_commands.js --stage local",
