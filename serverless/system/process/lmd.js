@@ -20,9 +20,6 @@ module.exports.fn = async (event, context) => {
         );
         // dc.l("functionPath:", functionPath);
 
-
-        await alice.connect(); // Connect to Database
-
         result = await alice.process({
             functionPath,
             maxRunTime: 5 * 60,
