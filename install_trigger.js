@@ -27,7 +27,7 @@ alice.loadRuntimeConfig(__dirname, stage);
         try {
             dc.j(_MODULE, "_MODULE");
             // debug("createDataTrigger(%s)", jsonString(trigger));
-            const result = await alice.createDataTrigger(_MODULE);
+            const result = await alice.createTrigger(_MODULE);
             // console.log("createDataTrigger() DONE");
             // dc.l("createDataTrigger().result", dc.stringify(result));
             dc.l("DONE");
