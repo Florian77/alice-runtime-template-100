@@ -1,26 +1,21 @@
 {
-  "name": "api-pim-inventory",
+  "name": "serverless-api-app",
   "version": "1.0.0",
-  "description": "",
   "scripts": {
-    "_____________api_PIM_Inventory": "echo api_PIM_Inventory",
+    "_____________api_App": "echo api_App",
     "____LOCAL____": "echo ____LOCAL____",
-    "Invoke_Local": "cd ../.. && npx serverless invoke local -f api_PIM_Inventory -s local",
+    "Invoke_Local": "cd ../.. && npx serverless invoke local -f api_App -s local",
     "____DEV____": "echo ____DEV____",
-    "Invoke_Local_": "cd ../.. && npx serverless invoke local -f api_PIM_Inventory -s dev",
-    "Invoke_": "cd ../.. && npx serverless invoke -f api_PIM_Inventory -s dev",
-    "Logs_": "cd ../.. && npx serverless logs -f api_PIM_Inventory -s dev",
-    "Log_Feed_": "cd ../.. && npx serverless logs -t -f api_PIM_Inventory -s dev",
-    "Deploy_": "cd ../.. && npx serverless deploy function -f api_PIM_Inventory -s dev",
+    "Invoke_Local_": "cd ../.. && npx serverless invoke local -f api_App -s dev",
+    "Invoke_": "cd ../.. && npx serverless invoke -f api_App -s dev",
+    "Logs_": "cd ../.. && npx serverless logs -f api_App -s dev",
+    "Log_Feed_": "cd ../.. && npx serverless logs -t -f api_App -s dev",
+    "Deploy_": "cd ../.. && npx serverless deploy function -f api_App -s dev",
     "____PROD____": "echo ____PROD____",
-    "Invoke_Local__": "cd ../.. && npx serverless invoke local -f api_PIM_Inventory -s prod",
-    "Invoke__": "cd ../.. && npx serverless invoke -f api_PIM_Inventory -s prod",
-    "Logs__": "cd ../.. && npx serverless logs -f api_PIM_Inventory -s prod",
-    "Log_Feed__": "cd ../.. && npx serverless logs -t -f api_PIM_Inventory -s prod",
-    "Deploy__": "cd ../../../../ && npx serverless deploy function -f api_PIM_Inventory -s prod"
-  },
-  "keywords": [],
-  "author": "Florian Tölle",
-  "dependencies": {
+    "Invoke_Local__": "cd ../.. && npx serverless invoke local -f api_App -s prod",
+    "Invoke__": "cd ../.. && npx serverless invoke -f api_App -s prod",
+    "Logs__": "cd ../.. && npx serverless logs -f api_App -s prod",
+    "Log_Feed__": "cd ../.. && npx serverless logs -t -f api_App -s prod",
+    "Deploy__": "cd ../../../../ && npx serverless deploy function -f api_App -s prod"
   }
 }
