@@ -7,6 +7,8 @@
       "DB": "alice-runtime-template-100-dev"
     },
     "SHOW_DB_CONNECTION_MSG": false,
-    "ENCRYPTION_KEY": "---add-256-bit-key-here---"
+    "ENCRYPTION_KEY": "---add-256-bit-key-here---",
+    "DASHBOARD_API_KEY": "dev-api-key",
+    "APP_API_KEY": "dev-api-key"
   }
 }

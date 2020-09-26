@@ -52,6 +52,19 @@ module.exports.fn = async (event, context) => {
     // dc.j(context, 'context');
     // return ;
 
+    const apiKey = R.pathOr("", ["headers", "x-api-key"], event);
+    // dc.t(apiKey, "x-api-key");
+    // dc.t(R.path(["env", "ALICE_RUNTIME_DASHBOARD_API_KEY"], process));
+
+    if (R.isEmpty(apiKey) || !R.pathEq(["env", "ALICE_RUNTIME_DASHBOARD_API_KEY"], apiKey, process)) {
+        console.log("api key check failed [%s]", apiKey);
+        return makeResponse(403, {
+            ok: false,
+            ack: 'error',
+            message: 'header:x-api-key check failed',
+        });
+    }
+
     let responseCode, responseBody;
     try {
         // Connect to Database
