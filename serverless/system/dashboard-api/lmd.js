@@ -52,12 +52,17 @@ module.exports.fn = async (event, context) => {
     // dc.j(context, 'context');
     // return ;
 
-    const apiKey = R.pathOr("", ["headers", "x-api-key"], event);
-    // dc.t(apiKey, "x-api-key");
-    // dc.t(R.path(["env", "ALICE_RUNTIME_DASHBOARD_API_KEY"], process));
+    const apiKeyReceived = R.pathOr("", ["headers", "x-api-key"], event);
+    // dc.t(apiKeyReceived, "apiKeyReceived");
+    const apiKeyExpected = R.pathOr("", ["env", "ALICE_RUNTIME_DASHBOARD_API_KEY"], process);
+    // dc.t(apiKeyExpected, "apiKeyExpected);
 
-    if (R.isEmpty(apiKey) || !R.pathEq(["env", "ALICE_RUNTIME_DASHBOARD_API_KEY"], apiKey, process)) {
-        console.log("api key check failed [%s]", apiKey);
+    // for debug only:
+    // console.log("apiKeyReceived: [%s]", apiKeyReceived);
+    // console.log("apiKeyExpected: [%s]", apiKeyExpected);
+
+    if (R.isEmpty(apiKeyReceived) || !R.equals(apiKeyExpected, apiKeyReceived)) {
+        console.log("api key check failed");
         return makeResponse(403, {
             ok: false,
             ack: 'error',
