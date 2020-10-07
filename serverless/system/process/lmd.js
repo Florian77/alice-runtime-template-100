@@ -22,7 +22,7 @@ module.exports.fn = async (event, context) => {
 
         result = await alice.process({
             functionPath,
-            maxRunTime: 5 * 60,
+            maxRuntime: 5 * 60,
         });
         console.log("result:", dc.stringify(result));
 
