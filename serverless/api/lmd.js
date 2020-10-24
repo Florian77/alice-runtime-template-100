@@ -34,6 +34,7 @@ const makeResponse = (statusCode = 200, body = {}) => ({
 // const isPostRequest = propEq('httpMethod', 'POST');
 
 module.exports.fn = async (event, context) => {
+    context.callbackWaitsForEmptyEventLoop = false;
     // dc.j(event, 'event');
     // dc.j(context, 'context');
 

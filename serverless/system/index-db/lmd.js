@@ -3,6 +3,7 @@ const dc = require("node-dev-console");
 
 
 module.exports.fn = async (event, context) => {
+    context.callbackWaitsForEmptyEventLoop = false;
     // dc.j(event, 'event');
     // dc.j(context, 'context');
     console.log("start process");

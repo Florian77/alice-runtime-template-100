@@ -48,6 +48,7 @@ const getQueryStringParameter = (event) => R.propOr({}, 'queryStringParameters',
 
 
 module.exports.fn = async (event, context) => {
+    context.callbackWaitsForEmptyEventLoop = false;
     // dc.j(event, 'event');
     // dc.j(context, 'context');
     // return ;
